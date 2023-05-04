@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-app-service
+  labels:
+    app: ecommerce-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: ecommerce-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  externalTrafficPolicy: Local
